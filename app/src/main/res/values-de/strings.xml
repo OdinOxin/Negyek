@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Negyek</string>
+    <string name="action_settings">Einstellungen</string>
+
+    <string name="input">Eingabe</string>
+    <string name="usage">Verwendung</string>
+    <string name="usage_ex">z.B. Google</string>
+    <string name="user">Benutzer</string>
+    <string name="user_ex">z.B. OdinOxin</string>
+    <string name="password">Passwort</string>
+    <string name="password_ex">z.B. *****</string>
+    <string name="length">Länge</string>
+    <string name="year">Jahr</string>
+
+    <string name="alphabet">Alphabet</string>
+
+    <string name="output">Ausgabe</string>
+
+    <string name="parenthesis_angular_toleft">&lt;</string>
+    <string name="parenthesis_angular_toright">&gt;</string>
+
+    <string name="err_invalid_value">Ungültiger Wert!</string>
+</resources>

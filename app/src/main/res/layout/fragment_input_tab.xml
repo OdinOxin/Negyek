@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/input_usage_tv"
+            android:text="@string/usage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/input_usage_et"
+            android:hint="@string/usage_ex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="start|end"/>
+
+        <TextView
+            android:id="@+id/input_user_tv"
+            android:text="@string/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/input_user_et"
+            android:hint="@string/user_ex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="start|end"/>
+
+        <TextView
+            android:id="@+id/input_password_tv"
+            android:text="@string/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/input_password_et"
+            android:hint="@string/password_ex"
+            android:inputType="textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="start|end"/>
+
+        <TextView
+            android:id="@+id/input_length_tv"
+            android:text="@string/length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+        <de.odinoxin.negyek.HorizontalNumberPicker
+            android:id="@+id/input_length_hnp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="start|end"
+            android:background="@drawable/control_horizontalnumberpicker_border"
+            app:hnp_min="1"
+            app:hnp_value="16"
+            app:hnp_max="100"
+            app:hnp_textsize="12sp"/>
+
+        <TextView
+            android:id="@+id/input_year_tv"
+            android:text="@string/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_vertical"/>
+        <de.odinoxin.negyek.HorizontalNumberPicker
+            android:id="@+id/input_year_hnp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="start|end"
+            android:background="@drawable/control_horizontalnumberpicker_border"
+            app:hnp_min="0"
+            app:hnp_value="0"
+            app:hnp_max="0"
+            app:hnp_textsize="12sp"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_columnSpan="2"
+            android:layout_gravity="start|end"/>
+
+    </GridLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorizontalNumberPicker">
+        <attr name="hnp_value" format="integer"/>
+        <attr name="hnp_min" format="integer"/>
+        <attr name="hnp_max" format="integer"/>
+        <attr name="hnp_prev" format="string"/>
+        <attr name="hnp_next" format="string"/>
+        <attr name="hnp_textsize" format="dimension"/>
+    </declare-styleable>
+</resources>
