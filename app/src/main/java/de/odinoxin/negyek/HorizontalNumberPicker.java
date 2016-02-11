@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -213,9 +214,79 @@ public class HorizontalNumberPicker extends LinearLayout
         this.listener = listener;
     }
 
+    @Override
+    protected Parcelable onSaveInstanceState()
+    {
+        Parcelable superState = super.onSaveInstanceState();
+        return new SavedState(superState, et_value.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state)
+    {
+        if(state instanceof SavedState)
+        {
+            SavedState ss = (SavedState) state;
+            super.onRestoreInstanceState(ss.getSuperState());
+            et_value.setText(ss.data);
+        }
+        else
+            super.onRestoreInstanceState(state);
+    }
+
+    @Override
+    protected void dispatchSaveInstanceState(SparseArray<Parcelable> container)
+    {
+        super.dispatchFreezeSelfOnly(container);
+    }
+
+    @Override
+    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container)
+    {
+        super.dispatchThawSelfOnly(container);
+    }
+
     public interface NumberChangedListener
     {
         public abstract void onNumberChanged(int value);
+    }
+
+    private class SavedState extends BaseSavedState
+    {
+        private String data;
+
+        public SavedState(Parcel source)
+        {
+            super(source);
+            data = source.readString();
+        }
+
+        public SavedState(Parcelable superState, String data)
+        {
+            super(superState);
+            this.data = data;
+        }
+
+        @Override
+        public void writeToParcel(Parcel out, int flags)
+        {
+            out.writeString(data);
+        }
+
+        public final Creator<SavedState> CREATOR = new Creator<SavedState>()
+        {
+            @Override
+            public SavedState createFromParcel(Parcel in)
+            {
+                return new SavedState(in);
+            }
+
+            @Override
+            public SavedState[] newArray(int size)
+            {
+                return new SavedState[size];
+            }
+        };
     }
 }
 
